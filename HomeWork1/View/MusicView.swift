@@ -9,14 +9,19 @@
 import SwiftUI
 
 struct MusicView: View {
+    @ObservedObject var viewModel: MusicViewModel = MusicViewModel()
+    
     var body: some View {
         NavigationView {
             List {
-                Text("Hello World")
-                Text("Hello World2")
-                Text("Hello World3")
+                ForEach(viewModel.tracks) { track in
+                    NavigationLink(destination: TrackView()) {
+                        TrackCellView(trackModel: track)
+                    }
+                    
+                }
+                .navigationBarTitle(Text("Traks"))
             }
-            .navigationBarTitle(Text("Navigation Title")) // Default to large title style
         }
     }
 }
