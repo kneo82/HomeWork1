@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    let buttonSize: CGFloat = 200.0
+    
     var body: some View {
         Button(
             action: {
@@ -16,9 +18,11 @@ struct HomeView: View {
             },
             label: {
                 Image(systemName: "play.circle.fill")
+                    .colorMultiply(.green)
             }
         )
-            .font(.system(size: 200))
+            .font(.system(size: buttonSize))
+            .frame(width: buttonSize, height: buttonSize, alignment: .center)
     }
 }
 

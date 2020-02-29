@@ -9,18 +9,18 @@
 import SwiftUI
 
 struct MusicView: View {
-    @ObservedObject var viewModel: MusicViewModel = MusicViewModel()
+    @EnvironmentObject var viewModel: MusicViewModel
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.tracks) { track in
-                    NavigationLink(destination: TrackView()) {
-                        TrackCellView(trackModel: track)
+                ForEach(viewModel.songs) { song in
+                    NavigationLink(destination: SongView(songModel: song)) {
+                        SongCellView(songModel: song)
                     }
                     
                 }
-                .navigationBarTitle(Text("Traks"))
+                .navigationBarTitle(Text("Songs"))
             }
         }
     }
@@ -28,6 +28,6 @@ struct MusicView: View {
 
 struct MusicView_Previews: PreviewProvider {
     static var previews: some View {
-        MusicView()
+        MusicView().environmentObject(MusicViewModel())
     }
 }
