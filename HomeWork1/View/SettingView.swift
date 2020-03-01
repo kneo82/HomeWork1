@@ -9,8 +9,17 @@
 import SwiftUI
 
 struct SettingView: View {
+    @State var isShowModal: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button("Modal view") {
+                self.isShowModal.toggle()
+            }
+        }
+        .sheet(isPresented: $isShowModal, onDismiss: { print("Modal Closed" )}) {
+            ModalView()
+        }
     }
 }
 

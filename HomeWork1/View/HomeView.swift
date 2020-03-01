@@ -18,7 +18,7 @@ struct HomeView: View {
             },
             label: {
                 Image(systemName: "play.circle.fill")
-                    .colorMultiply(.green)
+                    .foregroundColor(.green)
             }
         )
             .font(.system(size: buttonSize))
