@@ -15,7 +15,7 @@ struct MusicView: View {
         NavigationView {
             List {
                 ForEach(viewModel.songs) { song in
-                    NavigationLink(destination: SongView(songModel: song)) {
+                    NavigationLink(destination: LazyView(SongView(songModel: song))) {
                         SongCellView(songModel: song)
                     }
                 }
