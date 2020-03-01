@@ -18,10 +18,12 @@ struct MusicView: View {
                     NavigationLink(destination: SongView(songModel: song)) {
                         SongCellView(songModel: song)
                     }
-                    
                 }
                 .navigationBarTitle(Text("Songs"))
+                .navigationViewStyle(StackNavigationViewStyle())
             }
+            
+            SongView(songModel: viewModel.songs.first ?? Song(name: "Empty", artist: "Empty"))
         }
     }
 }
