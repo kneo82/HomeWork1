@@ -11,6 +11,7 @@
 		302485342408604D002982BB /* SongCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302485332408604D002982BB /* SongCellView.swift */; };
 		30248536240866EA002982BB /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30248535240866EA002982BB /* SongView.swift */; };
 		30398E60240C2FA200A31A0C /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30398E5F240C2FA100A31A0C /* LazyView.swift */; };
+		30398E62240C54E100A31A0C /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30398E61240C54E100A31A0C /* RootViewModel.swift */; };
 		30881A7E240B05F000AEA030 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30881A7D240B05F000AEA030 /* ModalView.swift */; };
 		30FFD0312406F14C0087B5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FFD0302406F14C0087B5FE /* AppDelegate.swift */; };
 		30FFD0332406F14C0087B5FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FFD0322406F14C0087B5FE /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 		302485332408604D002982BB /* SongCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellView.swift; sourceTree = "<group>"; };
 		30248535240866EA002982BB /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
 		30398E5F240C2FA100A31A0C /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		30398E61240C54E100A31A0C /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		30881A7D240B05F000AEA030 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		30FFD02D2406F14C0087B5FE /* HomeWork1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FFD0302406F14C0087B5FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				3024853124085A8C002982BB /* MusicViewModel.swift */,
+				30398E61240C54E100A31A0C /* RootViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				30398E60240C2FA200A31A0C /* LazyView.swift in Sources */,
 				30FFD0452406F56D0087B5FE /* MusicView.swift in Sources */,
 				302485342408604D002982BB /* SongCellView.swift in Sources */,
+				30398E62240C54E100A31A0C /* RootViewModel.swift in Sources */,
 				30FFD0352406F14C0087B5FE /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

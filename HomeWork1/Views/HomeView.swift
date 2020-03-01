@@ -10,11 +10,12 @@ import SwiftUI
 
 struct HomeView: View {
     let buttonSize: CGFloat = 200.0
+    let navigationAction: () -> Void
     
     var body: some View {
         Button(
             action: {
-                
+                self.navigationAction()
             },
             label: {
                 Image(systemName: "play.circle.fill")
@@ -28,6 +29,8 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView {
+            print("Action")
+        }
     }
 }

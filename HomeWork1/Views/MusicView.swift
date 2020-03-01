@@ -11,11 +11,13 @@ import SwiftUI
 struct MusicView: View {
     @EnvironmentObject var viewModel: MusicViewModel
     
+    @Binding var selectedItemId: UUID?
+
     var body: some View {
         NavigationView {
             List {
                 ForEach(viewModel.songs) { song in
-                    NavigationLink(destination: LazyView(SongView(songModel: song))) {
+                    NavigationLink(destination: LazyView(SongView(songModel: song)), tag: song.id, selection: self.$selectedItemId) {
                         SongCellView(songModel: song)
                     }
                 }
@@ -29,7 +31,8 @@ struct MusicView: View {
 }
 
 struct MusicView_Previews: PreviewProvider {
+    @State static var id: UUID?
     static var previews: some View {
-        MusicView().environmentObject(MusicViewModel())
+        MusicView(selectedItemId: $id).environmentObject(MusicViewModel())
     }
 }

@@ -9,35 +9,42 @@
 import SwiftUI
 
 struct RootView: View {
+    @ObservedObject var rootViewModel: RootViewModel
+    @State var songUUID: UUID?
+    @EnvironmentObject var musicViewModel: MusicViewModel
+    
     var body: some View {
-        TabView {
-            HomeView()
+        TabView(selection: $rootViewModel.selectedTab) {
+            HomeView() {
+                self.rootViewModel.selectedTab = RootViewModel.Tab.music
+                self.songUUID = self.musicViewModel.songs.first?.id
+            }
                 .font(.title)
                 .tabItem({
                     Image(systemName: "house")
                     Text("Home")
                 })
-                .tag(0)
-            MusicView()
+                .tag(RootViewModel.Tab.home)
+            MusicView(selectedItemId: $songUUID)
                 .font(.title)
                 .tabItem({
                     Image(systemName: "music.note.list")
                     Text("Music")
                 })
-                .tag(1)
+                .tag(RootViewModel.Tab.music)
             SettingView()
                 .font(.title)
                 .tabItem({
                     Image(systemName: "gear")
                     Text("Settings")
                 })
-                .tag(2)
+                .tag(RootViewModel.Tab.settings)
         }
     }
 }
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        RootView(rootViewModel: RootViewModel())
     }
 }
